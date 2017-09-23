@@ -68,12 +68,11 @@ func (g *generator) scan(typeName string, typ types.Type) *Struct {
 		return s
 	}
 
-	log.Println("Scanning " + typ.String())
-
 	switch t := typ.(type) {
 	case *types.Struct:
 		s = &Struct{name: typeName}
 		g.structs[typeName] = s
+		log.Println("Added "+typeName, followType(typ).String())
 		for i := 0; i < t.NumFields(); i++ {
 			fieldType := t.Field(i).Type()
 			fieldName := t.Field(i).Name()
