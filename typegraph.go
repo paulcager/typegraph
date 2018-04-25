@@ -41,8 +41,7 @@ var (
 )
 
 func main() {
-	//pkgNames := []string{"fm/types", "fm/postgres", "fm/fpweb"}
-	pkgNames := []string{"fm/types", "fm/fpweb"}
+	pkgNames := []string{"TODO"}
 	conf.FromArgs(pkgNames, false)
 	prog, err := conf.Load()
 	must(err, "%s", err)
